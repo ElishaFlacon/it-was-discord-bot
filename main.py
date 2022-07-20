@@ -1,5 +1,4 @@
 import discord
-from discord.ext import commands
 from config import settings
 import random
 import json
@@ -47,7 +46,6 @@ def create_embded(message, proop):
         embed = discord.Embed(
             color=0xff9900, title=f'{message.author.name}, {it_was_or_not()}')
         embed.set_image(url=json_data['link'])
-
     return embed
 
 
@@ -57,20 +55,18 @@ async def on_message(message):
     msg = message.content.lower()
     if message.author == client.user:
         return
-    src_active = False
-    if msg.startswith('было'):
-        src_active = True
-        await message.channel.send(embed=create_embded(message, False))
-    if msg.startswith('быдло'):
-        src_active = True
-        await message.channel.send(embed=create_embded(message, True))
-    if msg.startswith('') and src_active == False:
-        author_msg = msg.split()
-        for i in author_msg:
-            if i == 'было':
-                await message.channel.send(embed=create_embded(message, False))
-            if i == 'быдло':
-                await message.channel.send(embed=create_embded(message, True))
+    #  С помощью метода финд находим нужное слово
+    #  Даже в такой строчке - 'sdЫ2@4аы2быЛоффООФЫВ2392'
+    #  Так как если финд ничего не нашел он возвращает -1, то мы ставим условие >= 0
+    if msg.startswith(''):
+        if msg.find('было') >= 0:
+            print(
+                f'{message.author.name} написал: \"\"{message.content}\"\" И получил ответ, который я пока не знаю :P')
+            await message.channel.send(embed=create_embded(message, False))
+        if msg.find('быдло') >= 0:
+            print(
+                f'{message.author.name} написал: \"\"{message.content}\"\" И ОН БЫДЛО!!!')
+            await message.channel.send(embed=create_embded(message, True))
 
 
 #  Инициализируем бота
