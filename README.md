@@ -10,6 +10,8 @@
 
 - requests==2.27.1
 
+- beautifulsoup4==4.11.1
+
 
 Установка: pip install -r ./requirements.txt
 
