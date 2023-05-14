@@ -13,12 +13,13 @@
 
 
 <h2>
-  🛠️ Библиотеки для работы бота:
+  🛠️ Инструменты, которые использовались при разработке бота:
 </h2>
 
-- discord.py==1.7.3
-- requests==2.27.1
-- beautifulsoup4==4.11.1
+- Python
+- Discord.py
+- Beautifulsoup
+- Requests
 
 
 
@@ -30,15 +31,15 @@
   🚀 Зпуск приложения:
 </h2>
 
-- git clone https://github.com/ElishaFlacon/it-was-discord-bot.git
-- cd it-was-discord-bot
-- python -m venv <venv_name>
-- source <venv_name>/Scripts/activate (linux) or <venv_name>/Scripts/activate (windows)
-- pip install -r ./requirements.txt
+- `git clone https://github.com/ElishaFlacon/it-was-discord-bot.git`
+- `cd it-was-discord-bot`
+- `python -m venv <venv_name>`
+- `<venv_name>/Scripts/activate` (windows) или `source <venv_name>/Scripts/activate` (linux)
+- `pip install -r ./requirements.txt`
 - cоздаем приложение и бота на сайте (https://discord.com/developers/applications), а также зарегистрируйтесь, если еще не сделали это
 - добавте полученные ключи в код (config.py)
 - изменяем остальной код под свои нужды
-- python main.py
+- `python main.py`
 <h3>
     Запускаем, не работет, ура! 🗿🚬
 </h3>
